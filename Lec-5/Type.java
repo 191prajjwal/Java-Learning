@@ -117,7 +117,13 @@ public class Type {
         // Otherwise, if either is long, the result is long.
         // Otherwise, the result is int.
         //
-        // byte, short and char are generally promoted to int
+        // byte, short and char expressions are generally promoted to int
+        byte q= 5;
+        q=q*1;
+        //it will give error because q*q is promoted to int and we are storing it in q which is byte variable.
+        //so do explicit typecasting  if you want
+
+
         // before these rules are applied.
 
         // Example 1: int + long -> long
