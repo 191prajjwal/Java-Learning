@@ -6,6 +6,10 @@
 
    ```java
    byte x = 1 * 5;  // ✅ Works: constant value is 5
+
+   byte f= (int) 6; // ✅ works: constant value is 6 
+
+   byte g= (int) 128; //❌ here 128 is int and it goes beyond byte ranmge it will not allow it to store it in byte.
    ```
 
 3. **Variable expression:** Even if the result fits within the `byte` range, Java requires explicit casting when assigning the result to `byte`.
