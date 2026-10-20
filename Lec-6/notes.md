@@ -17,7 +17,7 @@ For each bit position:
 | Operator | Rule | Example |
 |---|---|---|
 | `&` AND | 1 only if both bits are 1 | `5 & 6 = 4` |
-| `|` OR | 1 if either bit is 1 | `5 | 6 = 7` |
+| `\|` OR | 1 if either bit is 1 | `5 \| 6 = 7` |
 | `^` XOR | 1 if bits differ | `5 ^ 6 = 3` |
 | `~` NOT | Flips every bit | `~5 = -6` |
 
