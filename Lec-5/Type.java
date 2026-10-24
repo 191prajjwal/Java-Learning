@@ -119,7 +119,7 @@ public class Type {
         //
         // byte, short and char expressions are generally promoted to int
         byte q= 5;
-        q=q*1;
+        // q=q*1;
         //it will give error because q*q is promoted to int and we are storing it in q which is byte variable.
         //so do explicit typecasting  if you want
 
