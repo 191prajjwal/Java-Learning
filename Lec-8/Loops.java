@@ -49,6 +49,33 @@ public class Loops{
     }
 
 
+    //Infinite loop situations
+
+int n=1;
+    while( n<=5){
+System.out.println("Hello");
+    }
+
+
+//     for(int o=1; ;o++){
+// System.out.println("Hello");
+//     }
+
+   
+//  for(;;){
+//         System.out.println("Hello");
+//     }
+    
+    //in for loop iniitialization condition and increment all maybe left empty it will be an inf loop too.
+
+
+    for(int q=1,r=0;q<4;q++,r=r+2 ){
+       System.out.println(q+r);
+    }
+
+    //we can write comma separated values of same type and initialize them once in a for loop, the condtions can not be comma separated we have to use && || or any other logical operator only, the increment can be comma separated as well
+   
+
 
 
 
