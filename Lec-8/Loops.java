@@ -1,85 +1,128 @@
-public class Loops{
-    public static void main(String [] args){
+public class Loops {
+    public static void main(String[] args) {
 
-// for doing a task again and again until a condition follows we use loop
+        // A loop repeats a task while its condition is true.
+        // A loop condition must evaluate to boolean.
 
-//inside condition of loops the expression must evaluate to boolean only
+        // 1. WHILE LOOP
+        int i = 1;
+        while (i <= 10) {
+            System.out.println(i);
+            i++;
+        }
 
-       //While loop
+        // The same loop can be written more compactly using post-increment.
+        int j = 1;
+        while (j <= 10) {
+            System.out.println(j++);
+        }
 
-       int i=1;
-       while(i<=10){
-        System.out.println(i);
-        i++;
-       }
+        // 2. DO-WHILE LOOP: runs at least once before checking the condition.
+        int k = 1;
+        do {
+            System.out.println(k);
+            k++;
+        } while (k <= 10);
 
-    //    we can write same above thing more cleanly like 
+        // 3. FOR LOOP
+        int l;
+        for (l = 0; l < 5; l++) {
+            System.out.println(l);
+        }
 
-    int j=1;
-    while(j<=10){
-        System.out.println(j++);
-    }
+        // Usually, initialize the loop variable inside the for loop.
+        for (int m = 0; m < 5; m++) {
+            System.out.println(m);
+        }
 
+        // 4. INFINITE LOOPS
+        int n = 1;
+        while (n <= 5) {
+            System.out.println("Hello");
+            n++; // Remove this increment to see why the loop becomes infinite.
+        }
 
-    // do-while loop
-    //it will run atleast once and then check condition is true or not 
+        // for (int o = 1; ; o++) {
+        //     System.out.println("Hello");
+        // }
 
-    int k=1;
+        // for (;;) {
+        //     System.out.println("Hello");
+        // }
 
-    do{
-        System.out.println(k);
-        k++;
-    }while(k<=10);
+        // In a for loop, initialization, condition, and update may be omitted.
+        // If the condition is omitted, it is treated as true.
 
+        // 5. MULTIPLE VARIABLES IN A FOR LOOP
+        for (int q = 1, r = 0; q < 4; q++, r = r + 2) {
+            System.out.println(q + r);
+        }
 
+        // Initialization can declare multiple variables of the same type.
+        // The condition must be one boolean expression; use && or || to combine checks.
+        // The update section can contain comma-separated expressions.
 
-    //For loop
-    
-    int l;
+        // for (byte s = 1; s < 50; s = s + 2) {
+        //     System.out.println(s);
+        // }
+        // This does not compile because s + 2 is an int and cannot be assigned to byte without a cast.
+        // byte and short arithmetic is promoted to int, so loop counters usually use int or long.
+        // int or long counters avoid repeated narrowing conversions and usually offer no benefit from smaller types.
 
-    for(l=0;l<5;l++){
-       System.out.println(l);
-    }
+        // 6. NESTED LOOPS: each inner-loop run happens for the current outer-loop iteration.
+        for (int s = 1; s <= 5; s++) {
+            for (int t = 1; t <= s; t++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
 
+        // 7. BREAK AND CONTINUE
+        // break exits the nearest loop; continue skips to the next iteration of the nearest loop.
 
-    // we can do it more cleanly by initializing the loop variable inside for only
+        // A plain break exits only the inner loop, not the outer loop.
+        for (int u = 1; u <= 3; u++) {
+            for (int v = 1; v <= 3; v++) {
+                System.out.println("*");
+                if (v == 2) {
+                    break; // Exits only the inner loop.
+                }
+            }
+        }
 
-    for(int m=0;m<5;m++){
-        System.out.println(m);
-    }
+        // 8. LABELS WITH LOOPS
+        // A labeled break can exit the named outer loop.
+        outer:
+        for (int w = 1; w <= 3; w++) {
+            inner:
+            for (int x = 1; x <= 3; x++) {
+                System.out.println("*");
+                if (x == 2) {
+                    break outer; // Exits the outer loop entirely.
+                }
+            }
+        }
 
+        // A labeled continue skips the rest of the current outer-loop iteration.
+        outer:
+        for (int y = 1; y <= 3; y++) {
+            inner:
+            for (int z = 1; z <= 3; z++) {
+                System.out.println(y);
+                if (z == 1) {
+                    continue outer; // Moves directly to the next iteration of the outer loop.
+                }
+            }
+        }
 
-    //Infinite loop situations
-
-int n=1;
-    while( n<=5){
-System.out.println("Hello");
-    }
-
-
-//     for(int o=1; ;o++){
-// System.out.println("Hello");
-//     }
-
-   
-//  for(;;){
-//         System.out.println("Hello");
-//     }
-    
-    //in for loop iniitialization condition and increment all maybe left empty it will be an inf loop too.
-
-
-    for(int q=1,r=0;q<4;q++,r=r+2 ){
-       System.out.println(q+r);
-    }
-
-    //we can write comma separated values of same type and initialize them once in a for loop, the condtions can not be comma separated we have to use && || or any other logical operator only, the increment can be comma separated as well
-   
-
-
-
-
-
-        
+        // 9. LABELS WITH BLOCKS
+        // Labels can name blocks too; break label exits the labeled block.
+        first_block: {
+            second_block: {
+                third_block: {
+                    System.out.println("inside block 3");
+                }
+            }
+        }
     }
 }
